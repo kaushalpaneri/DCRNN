@@ -2,7 +2,7 @@
 
 ![Diffusion Convolutional Recurrent Neural Network](figures/model_architecture.jpg "Model Architecture")
 
-This is a TensorFlow implementation of Diffusion Convolutional Recurrent Neural Network in the following paper: \
+This is a PyTorch implementation of Diffusion Convolutional Recurrent Neural Network in the following paper: \
 Yaguang Li, Rose Yu, Cyrus Shahabi, Yan Liu, [Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting](https://arxiv.org/abs/1707.01926), ICLR 2018.
 
 
@@ -10,7 +10,7 @@ Yaguang Li, Rose Yu, Cyrus Shahabi, Yan Liu, [Diffusion Convolutional Recurrent 
 - scipy>=0.19.0
 - numpy>=1.12.1
 - pandas>=0.19.2
-- tensorflow>=1.3.0
+- pytorch - version
 - pyaml
 
 
