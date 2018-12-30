@@ -182,3 +182,16 @@ class DCGRUCell(RNNCell):
             x = tf.nn.bias_add(x, biases)
         # Reshape res back to 2D: (batch_size, num_node, state_dim) -> (batch_size, num_node * state_dim)
         return tf.reshape(x, [batch_size, self._num_nodes * output_size])
+
+
+if __name__ == "__main__":
+
+    adj_matrix = np.array([[1,0,1],[0,1,0],[1,0,1]])
+    #print(str(adj_matrix.get_shape()))
+    input = tf.convert_to_tensor([[[1,2,3],[4,3,2]],[[2,3,2],[1,2,1]]])
+
+    cell = DCGRUCell(5, adj_matrix, 2, 2)
+
+
+    sess = tf.Session()
+    sess.run(cell._gconv(input, state=2,output_size=5))

@@ -20,8 +20,29 @@ import torch
 from torch import optim, nn
 import torch.nn.functional as F
 
+from lib import utils
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+
+class DCRNNSupervisor(object):
+
+    def __init__(self, adj_mtx, **kwargs):
+        self._kwargs = kwargs
+        self._data_kwargs = kwargs.get('data')
+        self._model_kwargs = kwargs.get('model')
+        self._train_kwargs = kwargs.get('train')
+
+        # Logging - TODO
+
+        self._data = utils.load_dataset(**self._data_kwargs)
+
+        print(self._data)
+
+
+
+
+'''
 class EncoderRNN(nn.Module):
     def __init__(self, input_size, hidden_size):
         super(EncoderRNN, self).__init__()
@@ -61,3 +82,5 @@ class DecoderRNN(nn.Module):
 
     def initHidden(self):
         return torch.zeros(1, 1, self.hidden_size, device=device)
+'''
+
